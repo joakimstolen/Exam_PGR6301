@@ -81,6 +81,7 @@ export class AuctionItem extends React.Component {
                     <input
                         placeholder={"Type your starting price for this auction item"}
                         value={this.state.startingPrice}
+                        type="number"
                         onChange={this.onStartingPriceChange}
                         className="itemInput"
                         id="itemStartingPrice"

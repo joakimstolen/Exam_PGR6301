@@ -20,25 +20,24 @@ export class AuctionItemBid extends React.Component {
     onFormSubmit2 = async (event) => {
         event.preventDefault();
 
-        const completed = await this.props.okCallback(
-            this.props.name,
-            this.props.description,
-            this.props.startingPrice,
-            this.state.highestBid,
-            this.props.itemId
 
-        );
+            const completed = await this.props.okCallback(
+                this.props.name,
+                this.props.description,
+                this.props.startingPrice,
+                this.state.highestBid,
+                this.props.itemId
+            );
 
-        console.log(this.props.name);
-        if(completed) {
-            this.props.history.push('/items');
-        } else {
-            alert("Failed to bid on item")
-        }
+
+            console.log(this.props.name);
+            if (completed) {
+                this.props.history.push('/items');
+            } else {
+                alert("Failed to bid on item")
+            }
+
     };
-
-
-
 
 
     onHighestBidChange = (event) => {
@@ -55,11 +54,13 @@ export class AuctionItemBid extends React.Component {
 
                 <form onSubmit={this.onFormSubmit2}>
 
-                    <div className="inputBid">Your bid: </div>
+                    <div className={"info"}>Current bid: {this.props.highestBid}</div>
+                    <div className={"info"}>Starting Price: {this.props.startingPrice}</div>
+                    <div className="inputBid">Your bid:</div>
                     <input
                         placeholder={"Type your bid for this auction item"}
-                        value={this.state.highestBid}
                         onChange={this.onHighestBidChange}
+                        type="number"
                         className="itemInput"
                         id="itemHighestBid"
                     />
@@ -76,8 +77,6 @@ export class AuctionItemBid extends React.Component {
 
         )
     }
-
-
 
 
 }
