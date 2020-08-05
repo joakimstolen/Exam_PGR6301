@@ -75,7 +75,7 @@ app.post('/api/items', (req, res) => {
 
     const dto = req.body;
 
-    const id = items.createNewItem(dto.name, dto.description, dto.startingPrice, dto.highestBid);
+    const id = items.createNewItem(dto.name, dto.description, dto.startingPrice, dto.highestBid, dto.userId);
     res.status(201);
     res.header("location", "api/items/" + id);
     res.send();

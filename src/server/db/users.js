@@ -1,6 +1,6 @@
 
 const users = new Map();
-
+let userId = 0;
 
 function getUser(id){
 
@@ -28,8 +28,9 @@ function createUser(id, password){
     const user = {
         id: id,
         password: password,
-        postedItems: [{}]
+        userId: userId
     };
+    userId++;
 
     users.set(id, user);
     return true;

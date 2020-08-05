@@ -9,7 +9,9 @@ export class Items extends React.Component {
 
         this.state = {
             items: null,
-            error: null
+            error: null,
+            soldText: "Mark as sold",
+            isSold: false
         }
     }
 
@@ -56,6 +58,7 @@ export class Items extends React.Component {
     }
 
 
+
     deleteItem = async (id) => {
         const url = "/api/items/" + id;
 
@@ -79,6 +82,11 @@ export class Items extends React.Component {
     };
 
 
+    markAsSold = () => {
+        this.setState({
+            soldText: "SOLD"
+        })
+    }
 
 
     render() {
@@ -114,10 +122,22 @@ export class Items extends React.Component {
                             <td className="tableData">
                                 {loggedIn ? (
                                     <div>
+                                        {this.props.user.userId !== m.userId && (
                                         <Link to={"/edit?itemId=" + m.id}>
                                             <button className="editBtn">Bid</button>
                                         </Link>
-                                        <button className="editBtn2" onClick={_ => this.deleteItem(m.id)}>Delete</button>
+                                        )}
+
+
+                                        {this.props.user.userId === m.userId && (
+                                            <button className="editBtn2" onClick={_ => this.deleteItem(m.id)}>Delete</button>
+                                        )}
+
+                                        {this.props.user.userId === m.userId && (
+                                            <button className="editBtn" onClick={this.markAsSold}>{this.state.soldText}</button>
+                                        )}
+
+
                                     </div>
                                 ) : (
                                     <div>

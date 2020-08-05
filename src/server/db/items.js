@@ -1,22 +1,22 @@
 
 const items = new Map();
 
-let counter = 0;
+let counter = 1;
 
 
 function initWithItems() {
     items.clear();
     counter = 0;
 
-    createNewItem("Iphone 11", "The brand new Iphone 11", 5000, 0);
-    createNewItem("Macbook Pro", "Powerful and stylish", 8500, 0);
-    createNewItem("Playstation 4", "Gaming console", 3400, 4000);
-    createNewItem("Samsung Galaxy Note 10", "Samsungs great phone", 7000, 8300);
+    createNewItem("Iphone 11", "The brand new Iphone 11", 5000, 0, "0");
+    createNewItem("Macbook Pro", "Powerful and stylish", 8500, 0, "0");
+    createNewItem("Playstation 4", "Gaming console", 3400, 4000, "0");
+    createNewItem("Samsung Galaxy Note 10", "Samsungs great phone", 7000, 8300, "0");
 
 }
 
 
-function createNewItem(name, description, startingPrice, highestBid){
+function createNewItem(name, description, startingPrice, highestBid, userId){
     const id = "" + counter;
     counter++;
 
@@ -25,7 +25,9 @@ function createNewItem(name, description, startingPrice, highestBid){
         name: name,
         description: description,
         startingPrice: startingPrice,
-        highestBid: highestBid
+        highestBid: highestBid,
+        userId: userId,
+        isSold: false
     };
 
     items.set(id, item);

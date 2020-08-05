@@ -20,7 +20,7 @@ export class AuctionItemBid extends React.Component {
     onFormSubmit2 = async (event) => {
         event.preventDefault();
 
-        if (this.state.highestBid > this.props.highestBid){
+        if (this.state.highestBid > this.props.highestBid && this.state.highestBid > this.props.startingPrice){
             const completed = await this.props.okCallback(
                 this.props.name,
                 this.props.description,

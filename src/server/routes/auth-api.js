@@ -45,7 +45,8 @@ router.get('/user', function (req, res) {
     }
 
     res.status(200).json({
-            id: req.user.id,
+        id: req.user.id,
+        userId: req.user.userId
             // balance: req.user.balance,
             // countries: req.user.countries
 
