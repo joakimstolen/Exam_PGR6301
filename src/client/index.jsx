@@ -6,7 +6,8 @@ import HeaderBar from "./headerbar";
 import {Home} from "./home";
 import SignUp from "./signup";
 import Login from "./login";
-
+import Items from "./items"
+import Create from "./create"
 
 export class App extends React.Component{
 
@@ -85,6 +86,18 @@ export class App extends React.Component{
                         <Route exact path="/signup" render={props => <SignUp {...props} fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
                         <Route exact path="/login" render={props => <Login {...props} fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
 
+                        <Route exact path="/create" render={props => <Create {...props}
+                                                                             user={this.state.user}
+                                                                             updateLoggedInUser={this.updateLoggedInUser}
+                                                                             fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
+
+
+                        <Route exact path="/items"
+                               render={props => <Items {...props}
+                                                      user={this.state.user}
+                                                      updateLoggedInUser={this.updateLoggedInUser}
+                                                      fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}
+                               />}/>
 
 
                         <Route exact path="/"

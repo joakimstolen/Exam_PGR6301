@@ -23,7 +23,6 @@ test("Test not logged in", async () => {
 
 test("Test logged in", async () => {
 
-
     const user = {id: "Foo", password:"bar"};
     const fetchAndUpdateUserInfo = () => new Promise(resolve => resolve());
 

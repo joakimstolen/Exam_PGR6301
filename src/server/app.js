@@ -9,11 +9,18 @@ const app = express();
 const ews = require('express-ws')(app);
 const WS = require('ws');
 
+const items = require('./db/items')
 
 const authApi = require('./routes/auth-api');
 const Users = require('./db/users');
 
+//Default users
 Users.createUser('Admin', '2');
+Users.createUser("Joakim", "1234");
+Users.createUser("Jon", "4321");
+Users.createUser("Brage", "111111");
+Users.createUser("Andrea", "andrea123");
+
 
 if (false) {
     console.log('Using CORS to allow all origins');
@@ -32,6 +39,74 @@ app.ws('/', function (socket, req) {
 });
 
 
+
+//////////////////////////////////////////////items
+
+
+app.get('/api/items', (req, res) => {
+
+    res.json(items.getAllItems());
+});
+
+app.get('/api/item/:id', (req, res) => {
+    const item = items.getItem(req.params["id"]);
+
+    if (!item){
+        res.status(404);
+        res.send();
+    } else {
+        res.json(item)
+    }
+
+});
+
+app.delete('/api/items/:id', (req, res) => {
+    const deleted = items.deleteItem(req.params.id);
+    if (deleted){
+        res.status(204);
+    } else {
+        res.status(404);
+    }
+
+    res.send();
+});
+
+app.post('/api/items', (req, res) => {
+
+    const dto = req.body;
+
+    const id = items.createNewItem(dto.name, dto.description, dto.startingPrice, dto.highestBid);
+    res.status(201);
+    res.header("location", "api/item/" + id);
+    res.send();
+
+});
+
+app.put('/api/items/:id', (req, res) => {
+    if (req.params.id !== req.body.id){
+        res.status(409);
+        res.send();
+        return;
+    }
+
+    const updated = items.updateItem(req.body);
+
+    if (updated){
+        res.status(204);
+    } else {
+        res.status(404);
+    }
+
+    res.send();
+});
+
+app.all('/api/items/*', (req,res) => {
+    res.status(404);
+    res.send();
+});
+
+
+//////////////////////////////////////////////items-end
 
 
 
@@ -81,6 +156,8 @@ passport.deserializeUser(function (id, done) {
         done(null, false);
     }
 });
+
+
 
 
 

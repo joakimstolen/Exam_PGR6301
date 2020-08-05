@@ -43,6 +43,9 @@ export class Home extends React.Component {
                         <p>Click the button to do stuff</p>
                         <p>Logged in!!!!!</p>
 
+                        <div className="btnPart">
+                            <Link to={"/items"} className={"btn"}>Show/Edit items for bid</Link>
+                        </div>
 
 
                     </div>
@@ -51,6 +54,10 @@ export class Home extends React.Component {
                         <p>
                             Log in/sign up to get premium access and ALSO get 1000 free credits
                         </p>
+
+                        <div className="btnPart">
+                            <Link to={"/items"} className={"btn"}>Show items for bid</Link>
+                        </div>
 
                     </div>
                 )}
