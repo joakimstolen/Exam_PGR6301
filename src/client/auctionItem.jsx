@@ -23,8 +23,8 @@ export class AuctionItem extends React.Component {
             this.state.name,
             this.state.description,
             this.state.startingPrice,
-            this.props.highestBid,
-            this.props.itemid
+            this.state.highestBid,
+            this.props.itemId
         );
 
         if(completed) {
@@ -84,6 +84,14 @@ export class AuctionItem extends React.Component {
                         onChange={this.onStartingPriceChange}
                         className="itemInput"
                         id="itemStartingPrice"
+                    />
+                    <div className="inputHighestBid">Highest Bid:</div>
+                    <input
+                        placeholder={"Type your bid for this auction item"}
+                        value={this.state.highestBid}
+                        onChange={this.onHighestBidChange}
+                        className="itemInput"
+                        id="itemHighestBid"
                     />
 
 

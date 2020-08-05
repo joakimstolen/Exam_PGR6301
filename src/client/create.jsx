@@ -1,7 +1,7 @@
 import React from "react";
-import MenuItem from "./auctionItem";
+import AuctionItem from "./auctionItem";
 import {withRouter} from "react-router-dom";
-import {Items} from "./items";
+
 
 
 export class Create extends React.Component{
@@ -17,10 +17,10 @@ export class Create extends React.Component{
         }
     }
 
-    onOk = async (name, description, startingPrice, itemId) => {
+    onOk = async (name, description, startingPrice, highestBid, itemId) => {
         const url = "/api/items";
 
-        const payload = {name, description, startingPrice};
+        const payload = {name, description, startingPrice, highestBid};
 
         let response;
 
@@ -50,11 +50,12 @@ export class Create extends React.Component{
                 {loggedIn ? (
                     <div>
                         <h3>Create a new Auction Item</h3>
-                        <MenuItem
+                        <AuctionItem
                             user={this.props.user}
                             name={""}
                             description={""}
                             startingPrice={""}
+                            highestBid={""}
                             ok={"Create"}
                             okCallback={this.onOk}
                         />
