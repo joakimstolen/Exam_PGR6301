@@ -6,6 +6,9 @@ export class AuctionItemBid extends React.Component {
         super(props);
 
         this.state = {
+            name: this.props.name ? this.props.name : "",
+            description: this.props.description ? this.props.description : "",
+            startingPrice: this.props.startingPrice ? this.props.startingPrice : "",
             highestBid: this.props.highestBid ? this.props.highestBid : ""
         };
 
@@ -18,17 +21,24 @@ export class AuctionItemBid extends React.Component {
         event.preventDefault();
 
         const completed = await this.props.okCallback(
-
+            this.props.name,
+            this.props.description,
+            this.props.startingPrice,
             this.state.highestBid,
             this.props.itemId
+
         );
 
+        console.log(this.props.name);
         if(completed) {
             this.props.history.push('/items');
         } else {
             alert("Failed to bid on item")
         }
     };
+
+
+
 
 
     onHighestBidChange = (event) => {

@@ -48,7 +48,7 @@ app.get('/api/items', (req, res) => {
     res.json(items.getAllItems());
 });
 
-app.get('/api/item/:id', (req, res) => {
+app.get('/api/items/:id', (req, res) => {
     const item = items.getItem(req.params["id"]);
 
     if (!item){
@@ -77,7 +77,7 @@ app.post('/api/items', (req, res) => {
 
     const id = items.createNewItem(dto.name, dto.description, dto.startingPrice, dto.highestBid);
     res.status(201);
-    res.header("location", "api/item/" + id);
+    res.header("location", "api/items/" + id);
     res.send();
 
 });

@@ -8,7 +8,7 @@ import SignUp from "./signup";
 import Login from "./login";
 import Items from "./items"
 import Create from "./create"
-import {Bid} from "./bid"
+import {Bid} from "./bid";
 
 export class App extends React.Component{
 

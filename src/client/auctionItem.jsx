@@ -85,14 +85,7 @@ export class AuctionItem extends React.Component {
                         className="itemInput"
                         id="itemStartingPrice"
                     />
-                    <div className="inputHighestBid">Highest Bid:</div>
-                    <input
-                        placeholder={"Type your bid for this auction item"}
-                        value={this.state.highestBid}
-                        onChange={this.onHighestBidChange}
-                        className="itemInput"
-                        id="itemHighestBid"
-                    />
+
 
 
                     <button type="submit" className={"submitBtn"}>{this.ok}</button>

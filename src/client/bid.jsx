@@ -1,5 +1,6 @@
 import React from "react";
 import AuctionItemBid from "./auctionItemBid";
+import {withRouter} from "react-router-dom";
 
 export class Bid extends React.Component {
 
@@ -32,17 +33,17 @@ export class Bid extends React.Component {
 
     async fetchItem(){
 
-        const url = "/api/items" + this.itemId;
+        const url = "/api/items/" + this.itemId;
 
         let response;
         let payload;
 
         try {
             response = await fetch(url);
-            payload = response.json();
+            payload =  await response.json();
         } catch (err) {
             this.setState({
-                error: "Error when retrieving menu item: " + err,
+                error: "Error when retrieving item: " + err,
                 item: null
             });
             return;
@@ -63,10 +64,10 @@ export class Bid extends React.Component {
     }
 
 
-    onOk = async (highestBid, id) => {
+    onOk = async (name, description, startingPrice, highestBid, id) => {
         const url = "/api/items/" + id;
 
-        const payload = {id, highestBid};
+        const payload = {name, description, startingPrice, highestBid, id};
 
         let response;
 
@@ -105,7 +106,6 @@ export class Bid extends React.Component {
         }
 
 
-
         return (
             <div>
                 {loggedIn ? (
@@ -134,3 +134,6 @@ export class Bid extends React.Component {
     }
 
 }
+
+
+export default withRouter(Bid);
