@@ -61,7 +61,7 @@ export class AuctionItem extends React.Component {
 
 
                 <form onSubmit={this.onFormSubmit}>
-                    <div className="inputName">Name:</div>
+                    <h3 className="inputName">Name:</h3>
                     <input
                         placeholder={"Type the name of this auction item"}
                         value={this.state.name}
@@ -69,7 +69,7 @@ export class AuctionItem extends React.Component {
                         className="itemInput"
                         id="itemName"
                     />
-                    <div className="inputDescription">Description:</div>
+                    <h3 className="inputDescription">Description:</h3>
                     <input
                         placeholder={"Type the description of this auction item"}
                         value={this.state.description}
@@ -77,7 +77,7 @@ export class AuctionItem extends React.Component {
                         className="itemInput"
                         id="itemDescription"
                     />
-                    <div className="inputStartingPrice">Starting Price:</div>
+                    <h3 className="inputStartingPrice">Starting Price:</h3>
                     <input
                         placeholder={"Type your starting price for this auction item"}
                         value={this.state.startingPrice}

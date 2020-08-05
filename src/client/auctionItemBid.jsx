@@ -20,7 +20,7 @@ export class AuctionItemBid extends React.Component {
     onFormSubmit2 = async (event) => {
         event.preventDefault();
 
-
+        if (this.state.highestBid > this.props.highestBid){
             const completed = await this.props.okCallback(
                 this.props.name,
                 this.props.description,
@@ -36,6 +36,10 @@ export class AuctionItemBid extends React.Component {
             } else {
                 alert("Failed to bid on item")
             }
+        } else {
+            alert("Too low bid")
+        }
+
 
     };
 
@@ -54,8 +58,9 @@ export class AuctionItemBid extends React.Component {
 
                 <form onSubmit={this.onFormSubmit2}>
 
-                    <div className={"info"}>Current bid: {this.props.highestBid}</div>
-                    <div className={"info"}>Starting Price: {this.props.startingPrice}</div>
+                    <h1 className={"info"}>{this.props.name}</h1>
+                    <h3 className={"info"}>Current bid: {this.props.highestBid}</h3>
+                    <h3 className={"info"}>Starting Price: {this.props.startingPrice}</h3>
                     <div className="inputBid">Your bid:</div>
                     <input
                         placeholder={"Type your bid for this auction item"}

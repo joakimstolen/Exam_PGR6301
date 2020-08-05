@@ -12,9 +12,9 @@ test('Test can render auction item form', () => {
         </MemoryRouter>
     );
 
-    const forms = driver.find('#menuItemName');
+    const forms = driver.find('#itemName');
     expect(forms.length).toEqual(1);
 
-    const btns = driver.find('#menuItemDescription');
+    const btns = driver.find('#itemDescription');
     expect(btns.length).toEqual(1);
 });

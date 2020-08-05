@@ -27,7 +27,8 @@ function createUser(id, password){
 
     const user = {
         id: id,
-        password: password
+        password: password,
+        postedItems: [{}]
     };
 
     users.set(id, user);
