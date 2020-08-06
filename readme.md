@@ -32,13 +32,13 @@ All files:  59.38% Stmts coverage
 
 ### Endpoints
 
-#### Items
+#### Items (found in app.js)
 - GET /api/items
 - GET /api/items/:id
 - DELETE /api/items/:id
 - POST /api/items
 - PUT /api/items/:id
-#### User
+#### User (found in auth-api.js)
 - POST /login
 - POST /logout
 - GET /user
