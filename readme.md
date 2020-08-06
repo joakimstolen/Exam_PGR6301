@@ -3,7 +3,7 @@
 ### How to run
 1. Open the folder containing the program and run ```yarn install``` in the root folder
 2. When ```yarn install``` has finished the dependecies have been installed properly, run ```yarn test``` to run test
-3. Run ```yarn dev``` to access the application at localhost:8080
+3. Run ```yarn dev``` to access the application at http://localhost:8080/
 
 
 ### Notes
@@ -25,14 +25,15 @@ This website lets you log in and put your belongings out for auction. You can al
 - Managed to complete R1, R2, R3 and T1, T2, T3, T4
 
 
-### Shortcomings
+### Shortcomings and minor things
 - I did not have time to complete websocket implementation(T5) 
 - I did not complete R4, R5 and T5
 - The exsisting fake/test data can not be marked as sold, but all new items can be marked as sold by the creator
+- My engine in the package.json file would not run if i used the "node": "^12.0.0" as it was expecting v.14. But i changed it to "node": ">=12.0.0" and then it worked. 
 
 ### Test Coverage
 All test do run. 
-All files:  62.47% Stmts coverage (Grade B)
+All files:  62.08% Stmts coverage (Grade B)
 
 ## Endpoints
 
