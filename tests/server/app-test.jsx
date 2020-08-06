@@ -37,7 +37,7 @@ test("Test retrieve each single item", async () => {
     }
 });
 
-//TODO: FIX THIS TEST
+
 
 test("Test create item", async () => {
 

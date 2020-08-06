@@ -3,18 +3,18 @@ import AuctionItemBid from "../../src/client/auctionItemBid";
 const React = require('react');
 const {mount} = require('enzyme');
 const {MemoryRouter} = require('react-router-dom');
-const {AuctionItem} = require('../../src/client/auctionItem');
 
-test('Test can render auction item form', () => {
+test('Test can render auction bid form', () => {
     const driver = mount(
         <MemoryRouter>
-            <AuctionItem/>
+            <AuctionItemBid/>
         </MemoryRouter>
     );
 
-    const forms = driver.find('#itemName');
+
+    const forms = driver.find('#itemHighestBid');
     expect(forms.length).toEqual(1);
 
-    const btns = driver.find('#itemDescription');
-    expect(btns.length).toEqual(1);
 });
+
+
