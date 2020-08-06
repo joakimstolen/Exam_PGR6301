@@ -64,10 +64,10 @@ export class Bid extends React.Component {
     }
 
 
-    onOk = async (name, description, startingPrice, highestBid, id) => {
+    onOk = async (name, description, startingPrice, highestBid, id, available) => {
         const url = "/api/items/" + id;
 
-        const payload = {name, description, startingPrice, highestBid, id};
+        const payload = {name, description, startingPrice, highestBid, id, available};
 
         let response;
 
@@ -116,6 +116,7 @@ export class Bid extends React.Component {
                             description={this.state.item.description}
                             startingPrice={this.state.item.startingPrice}
                             highestBid={this.state.item.highestBid}
+                            available={this.state.item.available}
                             itemId={this.itemId}
                             ok={"Update"}
                             okCallback={this.onOk}

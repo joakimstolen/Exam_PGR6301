@@ -105,6 +105,7 @@ export class Items extends React.Component {
             return false;
         }
 
+        this.fetchItems();
         return response.status === 204;
     };
 
