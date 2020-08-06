@@ -7,7 +7,7 @@
 
 
 ### Notes
-
+This website lets you log in and put your belongings out for auction. You can also bid on other peoples items as well as sell your own items. 
 
 
 ### Functionality
@@ -22,15 +22,19 @@
 - [x] Login page
 - [x] Signup page
 - [x] User cannot bid lower than the starting price or lower than the current highest bid
+- Managed to complete R1, R2, R3 and T1, T2, T3, T4
+
 
 ### Shortcomings
 - I did not have time to complete websocket implementation(T5) 
+- I did not complete R4, R5 and T5
+- The exsisting fake/test data can not be marked as sold, but all new items can be marked as sold by the creator
 
 ### Test Coverage
 All test do run. 
-All files:  59.38% Stmts coverage
+All files:  62.47% Stmts coverage (Grade B)
 
-### Endpoints
+## Endpoints
 
 #### Items (found in app.js)
 - GET /api/items

@@ -99,7 +99,7 @@ export class Bid extends React.Component {
         if (this.state.error !== null){
             return (
                 <div>
-                    <p>Cannot edit Item. {this.state.error}</p>
+                    <p id="loginMsgBid">Cannot bid on Item. {this.state.error}</p>
                 </div>
             );
         }
@@ -115,7 +115,7 @@ export class Bid extends React.Component {
             <div>
                 {loggedIn ? (
                     <div>
-                        <h3>Edit Item</h3>
+                        <h3>Bid on item</h3>
                         <AuctionItemBid
                             name={this.state.item.name}
                             description={this.state.item.description}

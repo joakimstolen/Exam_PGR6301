@@ -188,9 +188,9 @@ export class Items extends React.Component {
 
                 {loggedIn ? (
                     <div>
-                        <h2>Item list</h2>
+                        <h2>Items on auctions</h2>
                         <Link to={"/create"}>
-                            <button className="createBtn">Add new Item</button>
+                            <button className="createBtn">Add new Auction-Item</button>
                         </Link>
                         {table}
 

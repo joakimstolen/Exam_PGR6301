@@ -1,5 +1,5 @@
 body{
-    background-color: #abe7ef;
+    background-color: #B3E5FC;
 }
 
 
@@ -135,7 +135,7 @@ body{
     max-width: 700px;
     width: 75%;
     margin: auto;
-    background: #d2ffd8;
+    background: #E1F5FE;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@ input {
 }
 
 .submitMenuBtn, .submitBtn, .btn, .createBtn, .editBtn, .editBtn2, .loginBtn{
-    background: #62c7ff;
+    background: #03A9F4;
     border: none;
     font-size: 1rem;
     font-weight: 300;
@@ -178,7 +178,7 @@ li {
     font-weight: 300;
     padding: 20px 0 20px 0;
     width: 100%;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eeeeee;
     display: flex;
 }
 
@@ -198,6 +198,6 @@ li {
     align-content: center;
     align-items: center;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: #B3E5FC;
     border-radius: 5px;
 }

@@ -16,10 +16,7 @@ const Users = require('./db/users');
 
 //Default users
 Users.createUser('Admin', '2');
-Users.createUser("Joakim", "1234");
-Users.createUser("Jon", "4321");
-Users.createUser("Brage", "111111");
-Users.createUser("Andrea", "andrea123");
+
 
 
 if (false) {

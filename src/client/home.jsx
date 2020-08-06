@@ -30,7 +30,7 @@ export class Home extends React.Component {
             <div className="menuWrapper">
                 <div>
 
-                    <h2>ExamHeader</h2>
+                    <h2>Website for Oslo Auction and Bidding</h2>
 
                     <p>Welcome to the home page</p>
 
@@ -44,7 +44,7 @@ export class Home extends React.Component {
                         <p>Logged in!!!!!</p>
 
                         <div className="btnPart">
-                            <Link to={"/items"} className={"btn"}>Show/Edit items for bid</Link>
+                            <Link to={"/items"} className={"btn"}>Show/Bid on auction-items</Link>
                         </div>
 
 
@@ -52,11 +52,11 @@ export class Home extends React.Component {
                 ) : (
                     <div>
                         <p>
-                            Log in/sign up to get premium access and ALSO get 1000 free credits
+                            Log in/sign up to get premium access and the ability to put your items out for auction, and bid on other peoples items
                         </p>
 
                         <div className="btnPart">
-                            <Link to={"/items"} className={"btn"}>Show items for bid</Link>
+                            <Link to={"/items"} className={"btn"}>Show items on auction</Link>
                         </div>
 
                     </div>
