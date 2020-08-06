@@ -10,7 +10,7 @@ export class AuctionItem extends React.Component {
             name: this.props.name ? this.props.name : "",
             description: this.props.description ? this.props.description : "",
             startingPrice: this.props.startingPrice ? this.props.startingPrice : "",
-            highestBid: this.props.highestBid ? this.props.highestBid : "",
+            highestBid: this.props.highestBid ? this.props.highestBid : 0,
             userId: this.props.user.userId ? this.props.user.userId : "",
             available: this.props.available ? this.props.available : ""
         };

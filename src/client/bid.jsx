@@ -61,6 +61,11 @@ export class Bid extends React.Component {
             })
         }
 
+        if (response.status === 401) {
+            //I have custom error for such situations so no handling it here
+            return;
+        }
+
     }
 
 

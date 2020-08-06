@@ -14,7 +14,10 @@ export class Create extends React.Component{
     componentDidMount(){
         if(this.props.user) {
             this.props.fetchAndUpdateUserInfo();
+
         }
+
+
     }
 
     onOk = async (name, description, startingPrice, highestBid, userId, available) => {
@@ -23,6 +26,8 @@ export class Create extends React.Component{
         const payload = {name, description, startingPrice, highestBid, userId, available};
 
         let response;
+
+
 
         try {
             response = await fetch(url, {
@@ -35,6 +40,8 @@ export class Create extends React.Component{
         } catch (err) {
             return false;
         }
+
+
 
         return response.status === 201;
     };
@@ -64,7 +71,7 @@ export class Create extends React.Component{
                     </div>
                 ) : (
                     <div className="menuWrapper">
-                        <h2>Failed to execute </h2>
+                        <h2 id="loginMsgCreate">Failed to execute </h2>
                         <p>You need to log in or register</p>
                     </div>
                 )}

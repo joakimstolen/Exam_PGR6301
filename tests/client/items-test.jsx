@@ -81,3 +81,33 @@ test("Test display 1 item using stub", async () => {
 
     expect(html).toMatch(name);
 });
+
+test("Test delete items using SuperTest", async () => {
+
+    db.initWithItems();
+    overrideFetch(app);
+
+    const driver = mount(
+        <MemoryRouter initialEntries={["/items"]}>
+            <Items/>
+        </MemoryRouter>
+    );
+
+    const predicate = () => {
+
+        driver.update();
+        const tableSearch = driver.find('.completeItemsList');
+        const tableIsDisplayed =  (tableSearch.length >= 1);
+        return tableIsDisplayed;
+    };
+
+    const displayedTable = await asyncCheckCondition(predicate, 3000, 200);
+    expect(displayedTable).toBe(true);
+
+    const items = db.getAllItems();
+    const html = driver.html();
+
+    for(let i=0; i<items.length; i++){
+        expect(html).toMatch(items[i].name);
+    }
+});

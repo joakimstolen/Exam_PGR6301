@@ -48,7 +48,11 @@ app.get('/api/items', (req, res) => {
     res.json(items.getAllItems());
 });
 
+
 app.get('/api/items/:id', (req, res) => {
+
+
+
     const item = items.getItem(req.params["id"]);
 
     if (!item){
@@ -72,6 +76,7 @@ app.delete('/api/items/:id', (req, res) => {
 });
 
 app.post('/api/items', (req, res) => {
+
 
     const dto = req.body;
 
