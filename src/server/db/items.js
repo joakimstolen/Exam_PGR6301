@@ -8,17 +8,19 @@ function initWithItems() {
     items.clear();
     counter = 0;
 
-    createNewItem("Iphone 11", "The brand new Iphone 11", 5000, 0, "0");
-    createNewItem("Macbook Pro", "Powerful and stylish", 8500, 0, "0");
-    createNewItem("Playstation 4", "Gaming console", 3400, 4000, "0");
-    createNewItem("Samsung Galaxy Note 10", "Samsungs great phone", 7000, 8300, "0");
+    createNewItem("Iphone 11", "The brand new Iphone 11", 5000, 0, "0", true);
+    createNewItem("Macbook Pro", "Powerful and stylish", 8500, 0, "0", true);
+    createNewItem("Playstation 4", "Gaming console", 3400, 4000, "0", true);
+    createNewItem("Samsung Galaxy Note 10", "Samsungs great phone", 7000, 8300, "0", true);
 
 }
 
 
-function createNewItem(name, description, startingPrice, highestBid, userId){
+function createNewItem(name, description, startingPrice, highestBid, userId, available){
     const id = "" + counter;
     counter++;
+
+    available = true;
 
     const item = {
         id: id,
@@ -27,7 +29,7 @@ function createNewItem(name, description, startingPrice, highestBid, userId){
         startingPrice: startingPrice,
         highestBid: highestBid,
         userId: userId,
-        isSold: false
+        available: available
     };
 
     items.set(id, item);

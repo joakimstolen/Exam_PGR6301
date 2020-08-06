@@ -11,7 +11,6 @@ export class Items extends React.Component {
             items: null,
             error: null,
             soldText: "Mark as sold",
-            isSold: false
         }
     }
 
@@ -53,8 +52,6 @@ export class Items extends React.Component {
                 items: null
             });
         }
-
-
     }
 
 
@@ -82,11 +79,34 @@ export class Items extends React.Component {
     };
 
 
-    markAsSold = () => {
-        this.setState({
-            soldText: "SOLD"
-        })
-    }
+    markAsSold = async (id, name, description, startingPrice, highestBid, available) => {
+        const url = "/api/items/" + id;
+
+        if (available){
+            available = false
+        } else {
+            available = true
+        }
+
+        const payload = {id, name, description, startingPrice, highestBid, available};
+
+        let response;
+
+
+        try {
+            response = await fetch(url, {
+                method: "put",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+        } catch (err) {
+            return false;
+        }
+
+        return response.status === 204;
+    };
 
 
     render() {
@@ -109,6 +129,7 @@ export class Items extends React.Component {
                         <th>Description</th>
                         <th>Starting price</th>
                         <th>Highest bid</th>
+                        <th>Availability</th>
                         <th>Options</th>
                     </tr>
                     </thead>
@@ -119,6 +140,11 @@ export class Items extends React.Component {
                             <td className="tableData">{m.description}</td>
                             <td className="tableData">{m.startingPrice}</td>
                             <td className="tableData">{m.highestBid}</td>
+                            {m.available ? (
+                                <td className="tableData">Not sold</td>
+                            ) : (
+                                <td className="tableData">Sold</td>
+                            )}
                             <td className="tableData">
                                 {loggedIn ? (
                                     <div>
@@ -134,7 +160,7 @@ export class Items extends React.Component {
                                         )}
 
                                         {this.props.user.userId === m.userId && (
-                                            <button className="editBtn" onClick={this.markAsSold}>{this.state.soldText}</button>
+                                            <button className="editBtn" onClick={_ => this.markAsSold(m.id, m.name, m.description, m.startingPrice, m.highestBid, m.available)}>Mark as sold</button>
                                         )}
 
 

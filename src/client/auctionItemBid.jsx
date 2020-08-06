@@ -9,7 +9,8 @@ export class AuctionItemBid extends React.Component {
             name: this.props.name ? this.props.name : "",
             description: this.props.description ? this.props.description : "",
             startingPrice: this.props.startingPrice ? this.props.startingPrice : "",
-            highestBid: this.props.highestBid ? this.props.highestBid : ""
+            highestBid: this.props.highestBid ? this.props.highestBid : "",
+
         };
 
         this.ok = this.props.ok ? this.props.ok : "Ok"
@@ -37,7 +38,7 @@ export class AuctionItemBid extends React.Component {
                 alert("Failed to bid on item")
             }
         } else {
-            alert("Too low bid")
+            alert("Too low bid. Your bid must be greater than the starting price and the current highest bid.")
         }
 
 
