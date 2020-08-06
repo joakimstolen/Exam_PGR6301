@@ -149,7 +149,7 @@ export class Items extends React.Component {
                             <td className="tableData">
                                 {loggedIn ? (
                                     <div>
-                                        {this.props.user.userId !== m.userId && (
+                                        {this.props.user.userId !== m.userId && m.available === true && (
                                         <Link to={"/edit?itemId=" + m.id}>
                                             <button className="editBtn">Bid</button>
                                         </Link>
