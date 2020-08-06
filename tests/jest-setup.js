@@ -1,4 +1,5 @@
 //This file contains code the repository of the lecturerer, refactored to work in this exam
+//https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/tests/jest-setup.js
 
 const {configure } = require('enzyme');
 const jsdom = require('jsdom');

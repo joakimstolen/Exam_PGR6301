@@ -1,3 +1,6 @@
+//This file has code from the lecturer and has been changed to fit this assignment
+//https://github.com/arcuri82/web_development_and_api_design/blob/master/exercise-solutions/quiz-game/part-10/src/client/index.jsx
+
 import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';

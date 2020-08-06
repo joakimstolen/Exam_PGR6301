@@ -1,3 +1,6 @@
+//This file has code from the lecturer and has been changed to fit this assignment
+//https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/create.jsx
+
 import React from "react";
 import AuctionItem from "./auctionItem";
 import {withRouter} from "react-router-dom";

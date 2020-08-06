@@ -1,3 +1,6 @@
+//This file has code from the lecturer and has been changed to fit this assignment
+//https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/home.jsx
+
 import React from "react";
 import {withRouter} from 'react-router-dom';
 import {Link} from 'react-router-dom';
